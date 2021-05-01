@@ -1,6 +1,7 @@
 package com.example.tictactoe
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter name", Toast.LENGTH_SHORT).show()
             }else{
                 GameManger.createGame(GameManger.player.toString())
+                val intent = Intent(this,GameActivity::class.java)
+                startActivity(intent)
             }
         }
         binding.joinGameButton.setOnClickListener {
@@ -44,6 +47,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter Name", Toast.LENGTH_SHORT).show()
             }else{
                 GameManger.joinGame(GameManger.player.toString(), GameManger.gameId.toString())
+                val intent = Intent(this,GameActivity::class.java)
+                startActivity(intent)
             }
         }
 
