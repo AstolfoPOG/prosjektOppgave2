@@ -22,38 +22,6 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/x1y3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:text=""
-                android:layout_margin="4dp"/>
-
-            <Button
-                android:id="@+id/x2y3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:text=""
-                android:layout_margin="4dp"
-                />
-
-            <Button
-                android:id="@+id/x3y3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:text=""
-                android:layout_margin="4dp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
                 android:id="@+id/x1y2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -90,7 +58,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:text="" android:layout_margin="4dp"/>
+                android:text=""
+                android:layout_margin="4dp"/>
 
             <Button
                 android:id="@+id/x2y1"
@@ -98,10 +67,41 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:text=""
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                />
 
             <Button
                 android:id="@+id/x3y1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text=""
+                android:layout_margin="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/x1y0"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="" android:layout_margin="4dp"/>
+
+            <Button
+                android:id="@+id/x2y0"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text=""
+                android:layout_margin="4dp"/>
+
+            <Button
+                android:id="@+id/x3y0"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
