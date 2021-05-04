@@ -5,12 +5,13 @@ import com.example.tictactoe.api.data.Game
 import com.example.tictactoe.api.data.GameState
 
 object GameManger{
-
+    lateinit var currentGame: Game
     var player:String? = null
+    var playerNr:Int = 0
     var state:GameState? = null
     var gameId:String? = null
 
-    val InitialGameState:GameState = listOf(listOf(0,0,0),listOf(0,0,0),listOf(0,0,0))
+    val InitialGameState:GameState = mutableListOf(mutableListOf(0,0,0),mutableListOf(0,0,0),mutableListOf(0,0,0))
 
     fun createGame(player:String){
 
@@ -20,6 +21,9 @@ object GameManger{
             }else{
                 if (game != null) {
                     println("${player} har joinet ${game.gameId}")
+                    currentGame = game
+                    gameId = game.gameId
+                    GameUpdater.instance.pollUpdate()
                 }
             }
         }
@@ -31,6 +35,8 @@ object GameManger{
             }else{
                 if (game!= null){
                     println("du joinet ${game.gameId}")
+                    currentGame = game
+                    GameUpdater.instance.pollUpdate()
                 }
             }
         }
@@ -42,6 +48,8 @@ object GameManger{
             }else{
                 if (game!= null){
                     println("du updatet ${game.gameId}")
+                    GameUpdater.instance.pollUpdate()
+
                 }
             }
         }
@@ -53,6 +61,7 @@ object GameManger{
             }else{
                 if (game!= null){
                     println("du pollet ${game.gameId}")
+                    currentGame = game
                 }
             }
         }
