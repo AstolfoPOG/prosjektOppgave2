@@ -26,7 +26,7 @@ object GameService {
         CREATE_GAME("%1s%2s%3s".format(context.getString(R.string.protocol), context.getString(R.string.domain),context.getString(R.string.base_path))),
         JOIN_GAME("%1s%2s%3s%4s".format(context.getString(R.string.protocol), context.getString(R.string.domain),context.getString(R.string.base_path),context.getString(R.string.join_game_path))),
         UPDATE_GAME("%1s%2s%3s%4s".format(context.getString(R.string.protocol), context.getString(R.string.domain),context.getString(R.string.base_path),context.getString(R.string.update_game_path))),
-        POLL_GAME("%1s%2s%3s".format(context.getString(R.string.protocol), context.getString(R.string.domain),context.getString(R.string.base_path),context.getString(R.string.poll_game_path)))
+        POLL_GAME("%1s%2s%3s%4s".format(context.getString(R.string.protocol), context.getString(R.string.domain),context.getString(R.string.base_path),context.getString(R.string.poll_game_path)))
     }
 
 
@@ -85,7 +85,7 @@ object GameService {
 
         val requestData = JSONObject()
         requestData.put("gameId", gameId)
-        requestData.put("gameState", gameState)
+        requestData.put("state", JSONArray(gameState))
 
         val request = object : JsonObjectRequest(Method.POST,url, requestData,
                 {

@@ -4,10 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity">
+    tools:context=".GameActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/user1"
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:text="Username1"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="end"/>
+        <TextView
+            android:id="@+id/user2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Username2"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="end"/>
+
+    </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/gameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -26,14 +55,17 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                />
 
             <Button
                 android:id="@+id/x2y2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
                 />
@@ -43,6 +75,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
                 />
@@ -58,14 +91,17 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                />
 
             <Button
                 android:id="@+id/x2y1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
                 />
@@ -75,6 +111,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
                 />
@@ -90,23 +127,30 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:text="" android:layout_margin="4dp"/>
+                android:textSize="30sp"
+                android:text=""
+                android:layout_margin="4dp"
+                />
 
             <Button
                 android:id="@+id/x2y0"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                />
 
             <Button
                 android:id="@+id/x3y0"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
                 android:text=""
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                />
 
         </LinearLayout>
 
