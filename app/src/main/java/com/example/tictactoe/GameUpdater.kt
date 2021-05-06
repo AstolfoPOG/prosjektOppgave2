@@ -45,6 +45,8 @@ class GameUpdater{
     }
 
 
+
+
     companion object {
         val instance = GameUpdater()
     }

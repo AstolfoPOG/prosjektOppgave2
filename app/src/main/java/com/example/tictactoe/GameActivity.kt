@@ -1,7 +1,6 @@
 package com.example.tictactoe
 
 import android.os.Bundle
-import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tictactoe.api.data.Game
 import com.example.tictactoe.databinding.ActivityGameBinding
@@ -16,7 +15,12 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGameBinding.inflate(layoutInflater)
 
+        var oldTurn: MutableList<MutableList<Int>>
+        oldTurn = GameManger.currentGame.state
+
         setContentView(binding.root)
+
+        binding.user1.text = GameManger.currentGame.players[0]
 
 
         GameUpdater.instance.onGame = {
@@ -25,41 +29,125 @@ class GameActivity : AppCompatActivity() {
             if(GameManger.currentGame.players.size > 1){
                 binding.user2.text = GameManger.currentGame.players[1]
             }
-            moveChecker()
+            if (GameManger.playerNr == 1){
+                moveChecker()
+                enemyTurn(oldTurn)
+            }else if (GameManger.playerNr == 2){
+                moveChecker()
+                if (GameManger.currentGame.state == GameManger.InitialGameState){
+                    enemyMove()
+                }else{
+                    enemyTurn(oldTurn)
+                }
+            }
+
         }
 
 
 
-        binding.user1.text = GameManger.currentGame.players[0]
+
 
 
 
         binding.x1y2.setOnClickListener {
-            GameUpdater.instance.updateGameState(0,0)
+            if (binding.x1y2.text == ""){
+                GameUpdater.instance.updateGameState(0,0)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
         binding.x2y2.setOnClickListener {
-            GameUpdater.instance.updateGameState(0,1)
+            if(binding.x2y2.text == ""){
+                GameUpdater.instance.updateGameState(0,1)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
         binding.x3y2.setOnClickListener {
-            GameUpdater.instance.updateGameState(0,2)
+            if(binding.x3y2.text == ""){
+                GameUpdater.instance.updateGameState(0,2)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
         binding.x1y1.setOnClickListener {
-            GameUpdater.instance.updateGameState(1,0)
+            if(binding.x1y1.text == ""){
+                GameUpdater.instance.updateGameState(1,0)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
+
         }
         binding.x2y1.setOnClickListener {
-            GameUpdater.instance.updateGameState(1,1)
+            if(binding.x2y1.text == ""){
+                GameUpdater.instance.updateGameState(1,1)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
         binding.x3y1.setOnClickListener {
-            GameUpdater.instance.updateGameState(1,2)
+            if(binding.x3y1.text == ""){
+                GameUpdater.instance.updateGameState(1,2)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
         binding.x1y0.setOnClickListener {
-            GameUpdater.instance.updateGameState(2,0)
+            if(binding.x1y0.text == ""){
+                GameUpdater.instance.updateGameState(2,0)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
         binding.x2y0.setOnClickListener {
-            GameUpdater.instance.updateGameState(2,1)
+            if(binding.x2y0.text == ""){
+                GameUpdater.instance.updateGameState(2,1)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
         binding.x3y0.setOnClickListener {
-            GameUpdater.instance.updateGameState(2,2)
+            if(binding.x2y0.text == ""){
+                GameUpdater.instance.updateGameState(2,2)
+                enemyMove()
+                oldTurn = GameManger.currentGame.state
+                enemyTurn(oldTurn)
+            }else{
+                println("not possible")
+            }
+
         }
 
 
@@ -130,5 +218,37 @@ class GameActivity : AppCompatActivity() {
             binding.x3y0.setText("")
         }
 
+
     }
+    fun enemyMove(){
+        binding.x1y2.isClickable = false
+        binding.x2y2.isClickable = false
+        binding.x3y2.isClickable = false
+        binding.x1y1.isClickable = false
+        binding.x2y1.isClickable = false
+        binding.x3y1.isClickable = false
+        binding.x1y0.isClickable = false
+        binding.x2y0.isClickable = false
+        binding.x3y0.isClickable = false
+    }
+    fun yourMove(){
+        binding.x1y2.isClickable = true
+        binding.x2y2.isClickable = true
+        binding.x3y2.isClickable = true
+        binding.x1y1.isClickable = true
+        binding.x2y1.isClickable = true
+        binding.x3y1.isClickable = true
+        binding.x1y0.isClickable = true
+        binding.x2y0.isClickable = true
+        binding.x3y0.isClickable = true
+    }
+    fun enemyTurn(oldTurn: MutableList<MutableList<Int>>){
+        if (oldTurn == GameManger.currentGame.state){
+            println("waiting for turn.")
+        }else{
+            yourMove()
+            println("your turn")
+        }
+    }
+    
 }
