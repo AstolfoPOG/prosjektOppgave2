@@ -1,6 +1,7 @@
 package com.example.tictactoe
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tictactoe.api.data.Game
 import com.example.tictactoe.databinding.ActivityGameBinding
@@ -29,18 +30,21 @@ class GameActivity : AppCompatActivity() {
             if(GameManger.currentGame.players.size > 1){
                 binding.user2.text = GameManger.currentGame.players[1]
             }
-            if (GameManger.playerNr == 1){
-                moveChecker()
-                enemyTurn(oldTurn)
-            }else if (GameManger.playerNr == 2){
-                moveChecker()
-                if (GameManger.currentGame.state == GameManger.InitialGameState){
-                    enemyMove()
-                }else{
+            if (GameManger.gameUp) {
+                if (GameManger.playerNr == 1) {
+                    moveChecker()
                     enemyTurn(oldTurn)
+                    gameOver()
+                } else if (GameManger.playerNr == 2) {
+                    moveChecker()
+                    if (GameManger.currentGame.state == GameManger.InitialGameState) {
+                        enemyMove()
+                    } else {
+                        enemyTurn(oldTurn)
+                        gameOver()
+                    }
                 }
             }
-
         }
 
 
@@ -250,5 +254,97 @@ class GameActivity : AppCompatActivity() {
             println("your turn")
         }
     }
-    
+    fun gameOver(){
+        val x = listOf(1,2)
+        for (i in x) {
+            if (GameManger.currentGame.state[0][0] == i && GameManger.currentGame.state[0][1] == i && GameManger.currentGame.state[0][2] == i) {
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+            else if(GameManger.currentGame.state[1][0] == i && GameManger.currentGame.state[1][1] == i && GameManger.currentGame.state[1][2] == i){
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+            else if(GameManger.currentGame.state[2][0] == i && GameManger.currentGame.state[2][1] == i && GameManger.currentGame.state[2][2] == i){
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+            else if(GameManger.currentGame.state[0][0] == i && GameManger.currentGame.state[1][0] == i && GameManger.currentGame.state[2][0] == i){
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+            else if(GameManger.currentGame.state[0][1] == i && GameManger.currentGame.state[1][1] == i && GameManger.currentGame.state[2][1] == i){
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+            else if(GameManger.currentGame.state[0][2] == i && GameManger.currentGame.state[1][2] == i && GameManger.currentGame.state[2][2] == i){
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+            else if(GameManger.currentGame.state[0][0] == i && GameManger.currentGame.state[1][1] == i && GameManger.currentGame.state[2][2] == i){
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+            else if(GameManger.currentGame.state[0][2] == i && GameManger.currentGame.state[1][1] == i && GameManger.currentGame.state[2][0] == i){
+                if (GameManger.playerNr != i){
+                    Toast.makeText(this, "Du tapte", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }else{
+                    Toast.makeText(this, "Du vant", Toast.LENGTH_SHORT).show()
+                    GameManger.gameUp = false
+                    enemyMove()
+                }
+            }
+        }
+    }
 }
