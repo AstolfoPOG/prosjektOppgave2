@@ -27,7 +27,10 @@ class GameUpdater{
             override fun onFinish() {
                 GameManger.pollGame(GameManger.gameId.toString())
                 updater()
-                pollUpdate()
+                if(GameManger.gameUp){
+                    pollUpdate()
+                }
+
             }
             override fun onTick(millisUntilFinished: Long) {
 

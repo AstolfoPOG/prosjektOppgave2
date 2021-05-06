@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 GameManger.createGame(GameManger.player.toString())
                 GameManger.playerNr = 1
+                GameManger.gameUp = true
                 val intent = Intent(this,GameActivity::class.java)
                 timer = object : CountDownTimer(timeToCountDownInMs,timeTicks) {
                     override fun onFinish() {
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 GameManger.joinGame(GameManger.player.toString(), GameManger.gameId.toString())
                 GameManger.playerNr = 2
+                GameManger.gameUp = true
                 val intent = Intent(this,GameActivity::class.java)
                 timer = object : CountDownTimer(timeToCountDownInMs,timeTicks) {
                     override fun onFinish() {

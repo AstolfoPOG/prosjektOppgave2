@@ -10,6 +10,8 @@ object GameManger{
     var playerNr:Int = 0
     var state:GameState? = null
     var gameId:String? = null
+    var gameUp:Boolean = false
+
 
     val InitialGameState:GameState = mutableListOf(mutableListOf(0,0,0),mutableListOf(0,0,0),mutableListOf(0,0,0))
 
