@@ -10,7 +10,6 @@ class GameActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityGameBinding
 
-    //lateinit var game: Game
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,11 +21,10 @@ class GameActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.user1.text = GameManger.currentGame.players[0]
-
+        binding.gameIdDisplay.text = "GameID:".plus(GameManger.gameId)
 
         GameUpdater.instance.onGame = {
 
-            println(GameManger.currentGame.state)
             if(GameManger.currentGame.players.size > 1){
                 binding.user2.text = GameManger.currentGame.players[1]
             }
@@ -143,7 +141,7 @@ class GameActivity : AppCompatActivity() {
 
         }
         binding.x3y0.setOnClickListener {
-            if(binding.x2y0.text == ""){
+            if(binding.x3y0.text == ""){
                 GameUpdater.instance.updateGameState(2,2)
                 enemyMove()
                 oldTurn = GameManger.currentGame.state
@@ -248,10 +246,9 @@ class GameActivity : AppCompatActivity() {
     }
     fun enemyTurn(oldTurn: MutableList<MutableList<Int>>){
         if (oldTurn == GameManger.currentGame.state){
-            println("waiting for turn.")
+            //wait
         }else{
             yourMove()
-            println("your turn")
         }
     }
     fun gameOver(){

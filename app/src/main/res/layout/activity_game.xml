@@ -8,35 +8,68 @@
     android:background="@drawable/mobilpctictactoe">
 
     <LinearLayout
+        android:id="@+id/gameInfo"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
+        android:layout_height="200dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:id="@+id/user1"
-            android:layout_width="330dp"
-            android:layout_height="match_parent"
-            android:text="Username1"
-            android:layout_marginTop="48dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_gravity="end"/>
-        <TextView
-            android:id="@+id/user2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Username2"
-            android:layout_marginTop="48dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_gravity="end"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="horizontal"
+            android:paddingTop="125dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="30dp">
+
+                <TextView
+                    android:id="@+id/user1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Username1"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:id="@+id/user2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="Username2"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/gameIdDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="gameId"
+            android:textSize="20sp">
+
+        </TextView>
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/gameField"
+        android:id="@+id/gameBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -58,6 +91,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
 
             <Button
@@ -68,6 +103,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
 
             <Button
@@ -78,6 +115,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
         </LinearLayout>
 
@@ -94,6 +133,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
 
             <Button
@@ -104,6 +145,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
 
             <Button
@@ -114,6 +157,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
         </LinearLayout>
 
@@ -130,6 +175,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
 
             <Button
@@ -140,6 +187,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
 
             <Button
@@ -150,6 +199,8 @@
                 android:textSize="30sp"
                 android:text=""
                 android:layout_margin="4dp"
+                android:backgroundTint="@color/Black"
+                android:textColor="@color/White"
                 />
 
         </LinearLayout>

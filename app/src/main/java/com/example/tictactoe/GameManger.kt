@@ -36,7 +36,6 @@ object GameManger{
                 println(err)
             }else{
                 if (game!= null){
-                    println("du joinet ${game.gameId}")
                     currentGame = game
                     GameUpdater.instance.pollUpdate()
                 }
@@ -62,7 +61,6 @@ object GameManger{
                 println(err)
             }else{
                 if (game!= null){
-                    println("du pollet ${game.gameId}")
                     currentGame = game
                 }
             }
