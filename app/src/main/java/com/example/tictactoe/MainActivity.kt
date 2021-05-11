@@ -20,13 +20,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    @SuppressLint("HardwareIds")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val uniqID = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
         lateinit var timer:CountDownTimer
         var timeToCountDownInMs = 6000L
         val timeTicks = 1000L
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.startGameButton.setOnClickListener {
             GameManger.player = binding.playerName.text.toString()
+            binding.startGameButton.isClickable = false
             if (GameManger.player!!.isEmpty()){
                 Toast.makeText(this, "Enter name", Toast.LENGTH_SHORT).show()
             }else{
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
                 timer = object : CountDownTimer(timeToCountDownInMs,timeTicks) {
                     override fun onFinish() {
                         startActivity(intent)
+                        binding.startGameButton.isClickable = true
                     }
                     override fun onTick(millisUntilFinished: Long) {
 
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         binding.joinGameButton.setOnClickListener {
             GameManger.player = binding.playerName.text.toString()
             GameManger.gameId = binding.gameId.text.toString()
+            binding.joinGameButton.isClickable = false
             if (GameManger.player!!.isEmpty() && GameManger.gameId!!.isEmpty()){
                 Toast.makeText(this, "Enter Name and GameId", Toast.LENGTH_SHORT).show()
             }else if (GameManger.player!!.isNotEmpty() && GameManger.gameId!!.isEmpty()){
@@ -71,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                 timer = object : CountDownTimer(timeToCountDownInMs,timeTicks) {
                     override fun onFinish() {
                         startActivity(intent)
+                        binding.joinGameButton.isClickable = true
                     }
                     override fun onTick(millisUntilFinished: Long) {
 
