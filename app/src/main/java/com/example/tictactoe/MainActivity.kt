@@ -16,11 +16,6 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
-    val TAG:String = "MainActivity"
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -66,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             }else if (GameManger.player!!.isEmpty() && GameManger.gameId!!.isNotEmpty()){
                 Toast.makeText(this, "Enter Name", Toast.LENGTH_SHORT).show()
             }else{
+
                 GameManger.joinGame(GameManger.player.toString(), GameManger.gameId.toString())
                 GameManger.playerNr = 2
                 GameManger.gameUp = true

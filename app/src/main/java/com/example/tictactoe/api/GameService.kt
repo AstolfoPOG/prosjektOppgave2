@@ -5,7 +5,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.tictactoe.App
-import com.example.tictactoe.GameManger.state
+
 import com.example.tictactoe.R
 import com.example.tictactoe.api.data.Game
 import com.example.tictactoe.api.data.GameState

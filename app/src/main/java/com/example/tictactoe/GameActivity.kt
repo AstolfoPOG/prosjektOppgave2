@@ -343,5 +343,13 @@ class GameActivity : AppCompatActivity() {
                 }
             }
         }
+        if(GameManger.currentGame.state[0][0] != 0 && GameManger.currentGame.state[0][1] != 0 && GameManger.currentGame.state[0][2] != 0 &&
+            GameManger.currentGame.state[1][0] != 0 && GameManger.currentGame.state[1][1] != 0 && GameManger.currentGame.state[1][2] != 0 &&
+            GameManger.currentGame.state[2][0] != 0 && GameManger.currentGame.state[2][1] != 0 && GameManger.currentGame.state[2][2] != 0 &&
+                GameManger.gameUp){
+            Toast.makeText(this, "Draw", Toast.LENGTH_SHORT).show()
+            GameManger.gameUp = false
+            enemyMove()
+        }
     }
 }
