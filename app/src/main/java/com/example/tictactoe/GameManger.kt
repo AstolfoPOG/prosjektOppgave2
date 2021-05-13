@@ -8,7 +8,6 @@ object GameManger{
     lateinit var currentGame: Game
     var player:String? = null
     var playerNr:Int = 0
-    var state:GameState? = null
     var gameId:String? = null
     var gameUp:Boolean = false
 
